@@ -1,7 +1,16 @@
-experimental:menu_main_15505_label:Nickel
+experimental:menu_main_15505_label:Config
 
-menu_item :main :Lockscreen         :nickel_setting     :toggle :lockscreen
+menu_item : main : Screensaver : cmd_output : 500 : quiet : test -e /mnt/onboard/.kobo/screensaver_old
+      chain_failure : skip : 3
+      chain_success : cmd_spawn : quiet: mv /mnt/onboard/.kobo/screensaver_old /mnt/onboard/.kobo/screensaver
+      chain_success : dbg_toast : screensaver on
+      chain_always : skip : -1
+      chain_failure : cmd_spawn : quiet: mv /mnt/onboard/.kobo/screensaver /mnt/onboard/.kobo/screensaver_old
+      chain_success : dbg_toast : screensaver off
 menu_item :main :Screenshots        :nickel_setting     :toggle :screenshots
-menu_item :main :Dark Mode          :nickel_setting     :toggle :dark_mode
-menu_item :main :Invert & Reboot    :nickel_setting     :toggle: invert chain_success :power :reboot
+menu_item :main :Auto USB           :nickel_setting     :toggle :auto_usb_gadget
+menu_item :main :Invert & Reboot    :nickel_setting :toggle: invert
+    chain_success :power :reboot
 menu_item :main :Sleep              :power              :sleep
+
+menu_item :reader :Dark Mode          :nickel_setting     :toggle :dark_mode
