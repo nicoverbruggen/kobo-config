@@ -1,0 +1,7 @@
+experimental:menu_main_15505_label:Nickel
+
+menu_item :main :Lockscreen         :nickel_setting     :toggle :lockscreen
+menu_item :main :Screenshots        :nickel_setting     :toggle :screenshots
+menu_item :main :Dark Mode          :nickel_setting     :toggle :dark_mode
+menu_item :main :Invert & Reboot    :nickel_setting     :toggle: invert chain_success :power :reboot
+menu_item :main :Sleep              :power              :sleep
