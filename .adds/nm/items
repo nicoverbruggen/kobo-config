@@ -1,4 +1,5 @@
-experimental:menu_main_15505_label:Config
+experimental :menu_main_15505_label :Config
+experimental :menu_main_15505_icon :/mnt/onboard/.adds/nm/.cog.png 
 
 menu_item : main : Screensaver : cmd_output : 500 : quiet : test -e /mnt/onboard/.kobo/screensaver_old
       chain_failure : skip : 3
