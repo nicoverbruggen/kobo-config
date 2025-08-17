@@ -39,15 +39,7 @@ Copy over any sideloaded books to the `calibre` folder.
 
 Copy the `fonts` directory and any [extra fonts you like](https://github.com/nicoverbruggen/ebook-fonts/releases) over. 
 
-You can omit the `LICENSE` files, these have been included for legal reasons.
-
-The fonts included in this repository are:
-
-- **EB Garamond Absinthe** (OFL License, see LICENSE)
-- **Jost** (OFL License, see LICENSE)
-- **XCharter** (Bitstream License, see LICENSE)
-
-You can find [additional fonts](https://github.com/nicoverbruggen/ebook-fonts/releases) in my other repository.
+You can find [more fonts](https://github.com/nicoverbruggen/ebook-fonts/releases) in my other repository.
 
 ### Screensaver
 
