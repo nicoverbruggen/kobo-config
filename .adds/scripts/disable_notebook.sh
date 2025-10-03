@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# Script to disable Kobo notebook functionality
+# Script to disable Kobo notebook functionality.
+# This hides the Notebook tab on Kobo Libra Color.
 
 CONFIG_FILE="/mnt/onboard/.kobo/Kobo/Kobo eReader.conf"
 

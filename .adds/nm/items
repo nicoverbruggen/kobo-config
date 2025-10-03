@@ -12,7 +12,10 @@ menu_item :main :Screensaver :cmd_output :500 :quiet :test -e /mnt/onboard/.kobo
 menu_item :main :Screenshots        :nickel_setting     :toggle :screenshots
 menu_item :main :Auto USB           :nickel_setting     :toggle :auto_usb_gadget
 
-menu_item :main :Disable Pencil    :cmd_output :500 :/mnt/onboard/.adds/scripts/disable_notebook.sh
+menu_item :main :Hide Notebook    :cmd_output :500 :/mnt/onboard/.adds/scripts/disable_notebook.sh
+    chain_success :power :reboot
+
+menu_item :main :Toggle Legibility    :cmd_output :500 :/mnt/onboard/.adds/scripts/toggle_wk_rendering.sh
     chain_success :power :reboot
 
 menu_item :main    :IP Address      :cmd_output         :500:/sbin/ifconfig | /usr/bin/awk '/inet addr/{print substr($2,6)}'
