@@ -37,5 +37,6 @@ menu_item :main    :IP Address      :cmd_output         :500:/sbin/ifconfig | /u
 menu_item :main :Invert & Reboot    :nickel_setting :toggle: invert
     chain_success :power :reboot
 menu_item :main :Sleep              :power              :sleep
+menu_item :main :Reboot             :power              :reboot
 
 menu_item :reader :Dark Mode        :nickel_setting     :toggle :dark_mode
