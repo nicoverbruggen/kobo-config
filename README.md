@@ -31,8 +31,7 @@ This repository helps you set up your Kobo just like I set up mine. Take a look!
 
 First, install the latest version of [NickelMenu](https://pgaskin.net/NickelMenu/).
 
-> [!IMPORTANT]
-> I've actually included [a snapshot](https://github.com/pgaskin/NickelMenu/commit/2f7b78f26a162e1f598429e7ac18808db79af111) of the newest work-in-progress version of NickelMenu in the repository, but if there's a newer version you may want to download it from the website. If you want to download the same snapshot via GitHub, you can find [the build here](https://github.com/pgaskin/NickelMenu/actions/runs/16981265245).
+You will need at least version 0.6 of NickelMenu installed in order to have customized menu items.
 
 To install NickelMenu, copy `.kobo/KoboRoot.tgz` to your device in the same folder and let your device reboot.
 
