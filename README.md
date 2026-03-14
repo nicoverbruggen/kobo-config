@@ -64,7 +64,11 @@ Follow the instructions carefully. **You will also need to add a new item to `.a
 
 ### Fonts
 
-Copy the `fonts` directory and any [extra fonts you like](https://github.com/nicoverbruggen/ebook-fonts/releases) over. If you like what you're seeing, you can find [more fonts](https://github.com/nicoverbruggen/ebook-fonts/releases) in my other repository.
+Copy the `fonts` directory and any extra fonts you like over. 
+
+If you like what you're seeing, you can find [more fonts](https://github.com/nicoverbruggen/ebook-fonts/releases) in my other repository.
+
+(I recommend getting the Kobo Core fonts, since this repository only includes a Kobo-optimized version of Readerly.)
 
 ### Screensaver
 
