@@ -17,20 +17,17 @@ experimental :menu_main_15505_icon :/mnt/onboard/.adds/nm/.cog.png
 menu_item :main :Screensaver :cmd_output :500 :quiet :test -e /mnt/onboard/.kobo/screensaver_old
       chain_failure : skip : 3
       chain_success : cmd_spawn : quiet: mv /mnt/onboard/.kobo/screensaver_old /mnt/onboard/.kobo/screensaver
-      chain_success : dbg_toast : screensaver on
+      chain_success : dbg_toast : Screensaver is now ON.
       chain_always : skip : -1
       chain_failure : cmd_spawn : quiet: mv /mnt/onboard/.kobo/screensaver /mnt/onboard/.kobo/screensaver_old
-      chain_success : dbg_toast : screensaver off
+      chain_success : dbg_toast : Screensaver is now OFF.
 
 menu_item :main :Screenshots        :nickel_setting     :toggle :screenshots
 menu_item :main :Auto USB           :nickel_setting     :toggle :auto_usb_gadget
 
-# With the notebook feature disabled, this toggle is no longer required
-# menu_item :main :Hide Notebook    :cmd_output :500 :/mnt/onboard/.adds/scripts/disable_notebook.sh
-    chain_success :power :reboot
+menu_item :main :Legibility Status    :cmd_output :500 :/mnt/onboard/.adds/scripts/legibility_status.sh
 
-menu_item :main :Toggle Legibility    :cmd_output :500 :/mnt/onboard/.adds/scripts/toggle_wk_rendering.sh
-    chain_success :power :reboot
+menu_item :main :Legibility Toggle    :cmd_output :5000 :/mnt/onboard/.adds/scripts/toggle_wk_rendering.sh
 
 menu_item :main    :IP Address      :cmd_output         :500:/sbin/ifconfig | /usr/bin/awk '/inet addr/{print substr($2,6)}'
 
