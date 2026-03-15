@@ -69,7 +69,14 @@ If you like what you're seeing, you can find [more fonts](https://github.com/nic
 
 ### Screensaver
 
-You can copy the screensaver from `.kobo/screensaver` into the same folder on your Kobo device. You can toggle this feature via the **Tweak** tab (the custom NickelMenu tab at the bottom of the home screen).
+You can copy the screensaver from `.kobo/screensaver` into the same folder on your Kobo device.
+
+**You can also add your own screensavers.** If you add any additional `.png` or `.jpg` files to the `.kobo/screensaver` folder, you will randomly get an image each time you put your device to sleep. Nice, right?
+
+You can toggle this feature via the **Tweak** tab (the custom NickelMenu tab at the bottom of the home screen), which lets you swap between viewing the book cover or the custom images you want. Useful for when you like seeing only your favorite covers...
+
+> [!TIP]
+> Keep in mind that you need to have the setting to display a book cover on. You can check it via **More > Settings > Energy saving and privacy > Show current read**, which must be set to "On".
 
 ## Additional tweaks
 
