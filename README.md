@@ -33,15 +33,29 @@ This repository helps you set up your Kobo just like I set up mine, which includ
 - In the reader menu, a **Dark Mode** toggle has also been added. You can press the ... (ellipsis menu) to see this option when reading. (You no longer need to dig into settings to toggle this!)
 - Added **customized fonts**.
 
+## Installing via browser over USB (easiest)
+
+If you've got Chrome, it's super easy.
+
+1. You can visit [this website](https://kp.nicoverbruggen.be/) and use the **Connect my Kobo** feature, and select **Install or remove NickelMenu**. 
+
+2. You can then select **Install NickelMenu & Apply Preset**. Check all the boxes for the complete experience.
+
+3. Tell the webpage to **copy the files to your device**, **safely unplug** your device and **wait a bit**. When it restarts, you should be set!
+
+This is made possible by my [KoboPatch Web UI](https://github.com/nicoverbruggen/kobopatch-webui). You can visit the project page to learn more about it. It was made for maximum convenience.
+
+You can also use this webpage to **uninstall NickelMenu** if you don't like it.
+
 ## Installing NickelMenu
 
-**NickelMenu must be installed for all of these changes to work correctly.** 
+**If you aren't using the installation via the browser, you must first install NickelMenu. I repeat: NickelMenu must be installed for all of these changes to work correctly.** 
 
 First, install the latest version of [NickelMenu](https://pgaskin.net/NickelMenu/). Keep in mind that you will need at least version 0.6 of NickelMenu installed in order to have customized menu items.
 
 To install NickelMenu, copy `.kobo/KoboRoot.tgz` to the `.kobo` folder on your Kobo, and let your e-reader reboot. (It should tell you that it's installing an update and reboot.)
 
-## Quick Setup (Mac)
+## Using Mac setup script
 
 Once NickelMenu is installed, you can use the script I've added to the repository. Connect your Kobo to your Mac via USB, then run:
 
@@ -105,30 +119,13 @@ Follow the instructions carefully. **You will also need to add a new item to `.a
 
 ### Custom patches
 
-In my screenshot above, I've disabled the 3rd row on the homescreen. This is accomplished via a custom patch to the system software.
+In my screenshot above, I've disabled the 3rd row on the homescreen. 
 
-You can usually find a `zip` with [patches on the MobileRead forums](https://www.mobileread.com/forums/forumdisplay.php?f=247). You can search for "Patches for Firmware" and then the version number of your firmware. (At the time of writing this, for example, [this](https://www.mobileread.com/forums/showthread.php?t=372436) is the latest thread for the Libra Color, Clara BW and Clara Color, but you **should always use patches for your Kobo's version number**.)
+This was originally accomplished via a custom patch, but I actually now have a better method. You can install my [experimental version of NickelMenu](https://github.com/nicoverbruggen/NickelMenu/releases/tag/experimental) and apply the following items in your configuration file after installing it:
 
-A few important notes:
-
-- Unlike the other tweaks, I recommend double checking everything here. Keep reading why.
-- You must first note what operating system version you are using.
-- You can then download a copy of the software via [the `kobofirmware` page kindly set up by Patrick Gaskin](https://pgaskin.net/KoboStuff/kobofirmware.html). 
-- **Make sure to download the correct version for your device, or you risk bricking your device!**
-- You can then apply patches via the patcher. For up-to-date instructions, use the `readme.txt` from the `zip` you got from MobileRead.
-- If you upgrade your system software (which may happen automatically) you will need to fetch the updated patches `zip` from MobileRead, and re-apply those patches again.
-
-If you're curious about what tweak I use... For example, the `kobopatch.yaml` config file can look like this:
-
-```yaml
-overrides:
-  src/nickel.yaml:
-    Remove footer (row3) and increase cover size on new home screen: no
-    Remove footer (row3) on new home screen: yes # <--- I changed this!
+```
+experimental:hide_home_row1col2_enabled:1
+experimental:hide_home_row3_enabled:1
 ```
 
-To get the result in the screenshot above -- the removed third row, all it takes is modifying that single line and applying the patches.
-
-After adjusting the overrides, you can copy the firmware file to `src` and run the script. 
-
-Again, please follow the up-to-date instructions in `readme.txt`. Once `KoboRoot.tgz` has been successfully generated, you can copy it to the `.kobo` folder on your device and those patches will be applied.
+You will need to reboot your device for these changes to be applied, as the home screen elements are hidden when NickelMenu hooks into the system.
