@@ -121,11 +121,13 @@ Follow the instructions carefully. **You will also need to add a new item to `.a
 
 In my screenshot above, I've disabled the 3rd row on the homescreen. 
 
-This was originally accomplished via a custom patch, but I actually now have a better method. You can install my [experimental version of NickelMenu](https://github.com/nicoverbruggen/NickelMenu/releases/tag/experimental) and apply the following items in your configuration file after installing it:
+This was originally accomplished via a custom patch, but I actually now have a better method. You can install my [experimental version of NickelMenu](https://github.com/nicoverbruggen/NickelMenu/releases) and apply the following items in your configuration file after installing it:
 
 ```
 experimental:hide_home_row1col2_enabled:1
 experimental:hide_home_row3_enabled:1
 ```
 
-You will need to reboot your device for these changes to be applied, as the home screen elements are hidden when NickelMenu hooks into the system.
+I should note that there are more options available in this experimental version, starting at v1.1. Please check the [release notes](https://github.com/nicoverbruggen/NickelMenu/releases) there for more information.
+
+**You will need to reboot your device for these changes to be applied**, as the home screen elements are hidden when NickelMenu hooks into the system.
