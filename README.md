@@ -36,7 +36,9 @@ All of these live under the **Toggle** tab (the custom NickelMenu tab at the bot
 - In the reader menu, a **Dark Mode** toggle has also been added. You can press the ... (ellipsis menu) to see this option when reading. (You no longer need to dig into settings to toggle this!)
 - Added **customized fonts**.
 
-## Installing via browser over USB (easiest)
+## Installation
+
+### Using the browser tool (easiest)
 
 If you've got Chrome, it's super easy.
 
@@ -48,42 +50,23 @@ If you've got Chrome, it's super easy.
 
 This is made possible by my [KoboPatch Web UI](https://github.com/nicoverbruggen/kobopatch-webui). You can visit the project page to learn more about it. It was made for maximum convenience.
 
-You can also use this webpage to **uninstall NickelMenu** if you don't like it.
+### Manually
 
-## Installing NickelMenu
+Prefer not to use the browser tool? The full step-by-step for installing NickelMenu and copying the files over by hand lives in [MANUAL_INSTALLATION.md](./MANUAL_INSTALLATION.md).
 
-**If you aren't using the installation via the browser, you must first install NickelMenu. I repeat: NickelMenu must be installed for all of these changes to work correctly.** 
+## Uninstallation
 
-First, install the latest version of [NickelMenu](https://pgaskin.net/NickelMenu/). Keep in mind that you will need at least version 0.6 of NickelMenu installed in order to have customized menu items.
+Changed your mind? You can remove everything again.
 
-To install NickelMenu, copy `.kobo/KoboRoot.tgz` to the `.kobo` folder on your Kobo, and let your e-reader reboot. (It should tell you that it's installing an update and reboot.)
+### Using the browser tool (easiest)
 
-## Manual Setup
+Visit the [web installer](https://kp.nicoverbruggen.be/), choose **Install or remove NickelMenu**, and pick the remove option. It deletes the preset and its scripts, reverts the typography setting, optionally removes the fonts, screensaver, and NickelTypeFix, and triggers NickelMenu to uninstall itself on the next reboot.
 
-Before you begin, make sure to show hidden files and folders in your file manager, because the `.adds` and `.kobo` folders are hidden by default.
+### Manually
 
-### Installing menu items
+To remove just this configuration while keeping NickelMenu, delete the `.adds/nm` folder from your Kobo (and `.kobo/screensaver/moon.png` if you added it), then remove the `webkitTextRendering=optimizeLegibility` line from `.kobo/Kobo/Kobo eReader.conf`. Reboot to apply.
 
-Copy the `.adds` directory to the root of your `KOBOeReader` volume. This is the configuration for NickelMenu.
-
-### Fonts
-
-Copy the `fonts` directory and any extra fonts you like over. 
-
-If you like what you're seeing, you can find [more fonts](https://github.com/nicoverbruggen/ebook-fonts/releases) in my other repository.
-
-(I recommend getting the Kobo Core fonts, since this repository only includes a Kobo-optimized version of Readerly.)
-
-### Screensaver
-
-You can copy the screensaver from `.kobo/screensaver` into the same folder on your Kobo device.
-
-**You can also add your own screensavers.** If you add any additional `.png` or `.jpg` files to the `.kobo/screensaver` folder, you will randomly get an image each time you put your device to sleep. Nice, right?
-
-You can toggle this feature via the **Toggle** tab (the custom NickelMenu tab at the bottom of the home screen), which lets you swap between viewing the book cover or the custom images you want. Useful for when you like seeing only your favorite covers...
-
-> [!TIP]
-> Keep in mind that you need to have the setting to display a book cover on. You can check it via **More > Settings > Energy saving and privacy > Show current read**, which must be set to "On".
+To remove NickelMenu itself as well, use its built-in uninstaller: create an empty file named `uninstall` inside the `.adds/nm` folder and reboot. NickelMenu will remove itself on the next boot. See the [NickelMenu documentation](https://pgaskin.net/NickelMenu/) for details.
 
 ## Additional tweaks
 
